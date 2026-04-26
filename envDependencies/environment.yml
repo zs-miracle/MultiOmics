@@ -1,0 +1,29 @@
+name: MultiOmics
+channels:
+  - pytorch
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - openpyxl
+  - xlrd
+  - python-docx
+  - networkx
+  - jupyter
+  - ipykernel
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cpuonly
+  - pyg
+  - pip:
+      - tqdm
