@@ -1,29 +1,56 @@
 name: MultiOmics
+
 channels:
-  - pytorch
-  - pyg
   - conda-forge
   - defaults
+
 dependencies:
   - python=3.10
   - pip
+
+  # Basic scientific computing
   - numpy
   - pandas
   - scipy
   - scikit-learn
+
+  # Plotting
   - matplotlib
   - seaborn
+
+  # File formats
   - pyyaml
   - openpyxl
   - xlrd
   - python-docx
+
+  # Network / graph utilities
   - networkx
+
+  # Jupyter
   - jupyter
   - ipykernel
-  - pytorch
-  - torchvision
-  - torchaudio
-  - cpuonly
-  - pyg
+
+  # Progress bar
+  - tqdm
+
+  # Install PyTorch CUDA + PyG by pip
   - pip:
-      - tqdm
+      # PyTorch CUDA 12.8 wheels
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+
+      # PyG wheels matched to torch 2.8.0 + CUDA 12.8
+      - --find-links https://data.pyg.org/whl/torch-2.8.0+cu128.html
+
+      # PyTorch CUDA version
+      - torch==2.8.0+cu128
+      - torchvision==0.23.0+cu128
+      - torchaudio==2.8.0+cu128
+
+      # PyTorch Geometric
+      - torch-geometric==2.7.0
+      - pyg-lib
+      - torch-scatter
+      - torch-sparse
+      - torch-cluster
+      - torch-spline-conv
